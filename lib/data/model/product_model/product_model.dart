@@ -1,4 +1,4 @@
-import 'package:state_managements/2-lesson/data/model/product_model/rating_model.dart';
+import 'rating_model.dart';
 
 class ProductModel {
   int? id;

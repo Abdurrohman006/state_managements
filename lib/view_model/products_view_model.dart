@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:state_managements/2-lesson/service/api_service/api_service.dart';
+import 'package:state_managements/data/repository/products_repository.dart';
 
-class ProductViewModel extends ChangeNotifier {
+class ProductsViewModel extends ChangeNotifier {
+  ProductsViewModel() {
+    getAllProducts();
+  }
+
   List products = [];
   bool isLoading = false;
 
   void getAllProducts() async {
     changeLoadingState();
-    products = await ApiService().getAllProducts();
+    products = await ProductsRepository().getAllProducts();
     changeLoadingState();
   }
 

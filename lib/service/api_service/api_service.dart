@@ -19,7 +19,6 @@ class ApiService {
     Response response = await dio.get("https://fakestoreapi.com/products/$id");
     if (response.statusCode == 200) {
       return ProductModel.fromJson(response.data);
-
     }
   }
 }
